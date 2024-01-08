@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- public/stylesheets/style.css 
+    node static 모듈로 public이 지칭될것이어서 그다음부터 경로 명시-->
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+<body>
+    <!-- 우리의목적은 front - backend 연동을 통한 api service임으로
+    대부분의 경우 클라이언트요청이 들어올때 데이터를 json으로 서비스될것이다
+    backend가 잘 동작하고 있는지 확인 차원에서만 뿌릴 html template-->
+    <h1>{{title}}</h1>
+    <p>Welcome to {{title}}</p>
+</body>
+</html>

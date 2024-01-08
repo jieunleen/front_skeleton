@@ -1,0 +1,21 @@
+//서버 폴더로 변경해서 실행
+> npm init
+// package.json이 생성됨
+
+> npm install express morgan cors dotenv mysql2 bcrypt nunjucks chokidar
+
+// node modules는 안올라가용 gitignore때문에
+// github repository에는 node_modules는 올라가지않는다
+// 팀원이 clone하면 package.json만 공유된다
+// >npm install
+// package.json 에 명시된 모듈들이 다운로드된다 =>팀장과 동일환경이 됨
+
+//수업끝나고
+>npx nodemon app.js
+http://localhost:8000
+//역시 안되다 
+
+//개별 github repository에 push
+>git add .
+>git commit -m "aaaa"
+>git push -u origin main

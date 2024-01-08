@@ -1,0 +1,11 @@
+> npm init vite skeleton_front -- -- template react
+> cd skeleton_front
+> npm install
+
+> npm install axios bootstrap react-router react-router-dom styled-component
+// 위에서 warning몇개 나와도 괜찮어
+
+// bootstrap탬플릿 준비하자
+// github에 올ㄹ리필요 없을것같아서 .gitignore에 bootstrap_template/를 추가함
+
+// 기능별로 폴더를 만들거야
