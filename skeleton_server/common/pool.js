@@ -8,20 +8,20 @@
 
 // mysql연동 드라이버
 const mysql = require('mysql2/promise')
-const { Pool } = require('mysql2/typings/mysql/lib/Pool')
+// const { Pool } = require('mysql2/typings/mysql/lib/Pool')
 
 let pool
 // 앱에서 dbms작업이 필요하면 이 함수를 호출해서 connection을 얻어 실행
-module.exports = function getPool() {
+module.exports = function getPool(){
     if(pool){
-        return Pool
+        return pool
     }
     // 초기 pool구성 . 즉 초기 connection을 원하는 개수만큼 만들어서 유지
     const config = {
         host: process.env.DB_URL,
         port: process.env.DB_PORT,
         user: process.env.DB_USER,
-        password: process.env.PASSWORD,
+        password: process.env.DB_PASSWORD,
         database: process.env.DB_DATABASE,
         connectionLimit: 10
     }

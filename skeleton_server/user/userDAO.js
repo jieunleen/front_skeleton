@@ -1,4 +1,4 @@
-const bcrypt =require('bcrypt')
+const bcrypt = require('bcrypt')
 const getPool = require('../common/pool')
 
 const sql = {
@@ -19,10 +19,12 @@ const userDAO = {
             // pool에서 connection 획득하고
             conn = await getPool().getConnection()
 
-            console.lot('dao', item)
+            console.log('dao', item)
 
             // email check sql실행
             const [respCheck] = await conn.query(sql.checkId, item.email)
+
+            console.log('000', respCheck)
             if(respCheck[0]){
                 // console.log('1111')
                 // 이메일로 select되는 데이터가 있다면 이미item.email로 가입된 회원이 있다
@@ -34,10 +36,11 @@ const userDAO = {
                 // 유저password는 hash문자열로 변형시켜서 저장
                 const salt = await bcrypt.genSalt()
                 bcrypt.hash(item.password, salt, async (error, hash) => {
+                    console.log('3333')
                     if(error) callback({status:500, message: '암호화 실패', error :error})
                     else {
                         // db insert
-                        const [resp] =await conn.querty(sql.signup, [item.name, item.email, hash])
+                        const [resp] =await conn.query(sql.signup, [item.name, item.email, hash])
                         callback({status: 200, message: 'OK', data: resp})
                     }
                 })

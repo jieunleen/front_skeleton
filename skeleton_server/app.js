@@ -10,6 +10,7 @@ require('dotenv').config()
 
 const homeRouter = require('./home/homeRouter')
 const userRouter = require('./user/userRouter')
+const router = require('./home/homeRouter')
 
 const app = express()
 
@@ -41,7 +42,7 @@ app.use((req, res, next) => {
 })
 
 // error handle middleware
-// 에러 점누 middleware는 매개변수가 4개
+// 에러전문 middleware는 매개변수가 4개
 app.use((err, req, res, next) => {
     res.locals.message = err.message
     res.locals.error = process.env.NODE_ENV != 'production' ? err : {}
@@ -53,3 +54,5 @@ app.use((err, req, res, next) => {
 app.listen(8000, () => {
     console.log(8000,'번 포트에서 대기중.....')
 })
+
+module.exports = router
