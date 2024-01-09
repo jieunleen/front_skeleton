@@ -9,3 +9,24 @@
 // github에 올ㄹ리필요 없을것같아서 .gitignore에 bootstrap_template/를 추가함
 
 // 기능별로 폴더를 만들거야
+
+// 1월 9일 화
+public/js/a.js
+- component 에서 import해서 사용되는 js가 아니라
+- html파일에 <script>로 이용되는 파일
+
+vendor - 특별한 의미의 단어가 아니라
+bootstrap template을 제공하는 개인/기관등에서 만든 무언가 
+
+이제 copy하러갈거야
+bootstrap assests로 간다
+image복사해서 front의 src public- image에 넣었음
+js도front src public-js폴더에 넣었음
+css도 assets - css
+vendor밑의 폴더 5개 복사해서 public-vendor, assets에도 넣음 두개 복사를 한거지
+
+
+//서버 
+>npx nodemon app.js
+//front
+>npm run dev
