@@ -10,7 +10,7 @@ require('dotenv').config()
 
 const homeRouter = require('./home/homeRouter')
 const userRouter = require('./user/userRouter')
-const router = require('./home/homeRouter')
+const boardRouter = require('./board/boardRouter')
 
 const app = express()
 
@@ -32,6 +32,7 @@ app.use(express.urlencoded({extended: true}))
 // http://localhost:8000/
 app.use('/', homeRouter)
 app.use('/users', userRouter)
+app.use('/boards', boardRouter)
 
 // 404
 app.use((req, res, next) => {
@@ -55,4 +56,5 @@ app.listen(8000, () => {
     console.log(8000,'번 포트에서 대기중.....')
 })
 
-module.exports = router
+
+// module.exports = router

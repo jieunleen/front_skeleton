@@ -4,6 +4,7 @@ import Header from './home/component/Header'
 import Footer from './home/component/Footer'
 import HomeMain from './home/HomeMain'
 import UserName from './user/UserMain'
+import BoardMain from './board/BoardMain'
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
       <Routes>
         <Route path ='/' element={<HomeMain />} />
         <Route path ='/user/*' element = {<UserName />} />
+        <Route path ='/board/*' element = {<BoardMain />} />
       </Routes>
       <Footer />
 
