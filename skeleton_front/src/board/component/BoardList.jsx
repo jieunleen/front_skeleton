@@ -1,7 +1,7 @@
-import React, { useCallback, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import axios from 'axios'
-import { useEffect } from 'react'
+import { Link, useNavigate } from "react-router-dom"
+import axios from "axios"
+import React, { useCallback, useState, useEffect } from "react"
+
 
 const BoardList = () => {
 
